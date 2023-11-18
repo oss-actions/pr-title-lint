@@ -1,0 +1,7 @@
+name: Pull Request Title Lint
+runs:
+  using: node20
+  main: dist/main.js
+inputs:
+  title:
+    required: true
