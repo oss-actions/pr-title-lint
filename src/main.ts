@@ -17,7 +17,7 @@ const result = testTitle(title);
 if (!result.success) {
 	fail`
 		Title is not up to standards.
-			
+		
 		Title must be formatted as follows:
 		
 		\`\`\`
