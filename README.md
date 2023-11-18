@@ -17,4 +17,5 @@ jobs:
         with:
           title: ${{ github.event.pull_request.title }}
           summary: true
+          into: ${{ github.base_ref }}
 ```
