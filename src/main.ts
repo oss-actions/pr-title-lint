@@ -11,8 +11,9 @@ import { outputValidResult } from "./outputValidResult";
 
 const title = getInput("title", { type: string });
 const summary = getInput("summary", { type: boolean });
+const into = getInput("into", { type: string });
 
-const result = testTitle(title);
+const result = testTitle(title) as ValidTitleResult;
 
 if (!result.success) {
 	fail`
@@ -29,9 +30,13 @@ if (!result.success) {
 	`;
 }
 
+if (result.increment == "major" && into.startsWith("release/")) {
+	fail`Breaking changes or major version bumps are not allowed on a release branch!`;
+}
+
 if (summary) {
 	jobSummary`:rocket: Pull Request title is up to standards, and merging will cause a ${versionIncrement(
-		result as ValidTitleResult,
+		result,
 	)} version bump! :+1:`;
 }
 

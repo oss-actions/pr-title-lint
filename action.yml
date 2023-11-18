@@ -8,6 +8,8 @@ inputs:
   summary:
     required: false
     default: false
+  into:
+    required: true
 outputs:
   increment:
     description: The semver increment type
