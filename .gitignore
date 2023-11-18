@@ -17,6 +17,7 @@
 !/package-lock.json
 !/README.md
 !/tsconfig.json
+!/CODEOWNERS
 
 dist
 node_modules
