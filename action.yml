@@ -5,3 +5,11 @@ runs:
 inputs:
   title:
     required: true
+  summary:
+    required: false
+    default: false
+outputs:
+  increment:
+    description: The semver increment type
+  hard:
+    description: Whether to bypass v0 limitations

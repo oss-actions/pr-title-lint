@@ -13,7 +13,8 @@ jobs:
     name: Validate Pull Request Name
     runs-on: ubuntu-latest
     steps:
-      - uses: telenornorgeinternal/s07240-action-pr-title-lint-for-prudence@main
+      - uses: telenornorgeinternal/s07240-action-pr-title-parse-for-prudence@main
         with:
           title: ${{ github.event.pull_request.title }}
+          summary: true
 ```
